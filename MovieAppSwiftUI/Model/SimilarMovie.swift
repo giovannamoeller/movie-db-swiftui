@@ -12,4 +12,5 @@ struct SimilarMovie: Hashable, Codable {
   var image: String
   var releaseDate: Date
   var genres: [String]
+  
 }
