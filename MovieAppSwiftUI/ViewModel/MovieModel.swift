@@ -16,9 +16,17 @@ class MovieModel: ObservableObject {
     let getDetailsMovieRequest = API.makeRequest(request: .movieDetails)
     
     getDetailsMovieRequest.responseDecodable(of: Movie.self) { response in
-      guard let movieResponse = response.value else { return }
-      self.movie = movieResponse
+      guard let data = response.value else { return }
+      self.movie = data
     }
+    
+    let getGenres = API.makeRequest(request: .genres)
+    var genres: [Genre] = []
+    getGenres.responseDecodable(of: GenreData.self) { response in
+      guard let data = response.value else { return }
+      genres = data.genres
+    }
+    
     
     let getSimilariesMovies = API.makeRequest(request: .similarMovies)
     
@@ -26,8 +34,20 @@ class MovieModel: ObservableObject {
             
       guard let data = response.value else { return }
       
-      for similarMovie in data.results {
-        self.movie.similarMovies.append(similarMovie)
+      for similarMovie in 0..<data.results.count {
+        self.movie.similarMovies.append(data.results[similarMovie])
+        
+        let map: [String] = data.results[similarMovie].genresIds.map { id -> String in
+          
+          for genre in genres {
+            if id == genre.id {
+              return genre.name
+            }
+          }
+          return ""
+        }
+        
+        self.movie.similarMovies[similarMovie].genreString = map
       }
           
     }

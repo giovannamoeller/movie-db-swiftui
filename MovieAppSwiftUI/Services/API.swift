@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 enum RequestCallsAPI {
-  case movieDetails, similarMovies
+  case movieDetails, similarMovies, genres
 }
 
 struct API {
@@ -29,6 +29,9 @@ struct API {
       
       case .similarMovies:
       AFRequest = AF.request("https://api.themoviedb.org/3/movie/634649/similar?api_key=\(APIKey)&language=en-US&page=1")
+      
+      case .genres:
+      AFRequest = AF.request("https://api.themoviedb.org/3/genre/movie/list?api_key=\(APIKey)&language=en-US/genres")
       
     }
     
