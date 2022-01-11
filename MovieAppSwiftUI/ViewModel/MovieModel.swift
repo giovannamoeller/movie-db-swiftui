@@ -29,7 +29,6 @@ class MovieModel: ObservableObject {
       for similarMovie in data.results {
         self.movie.similarMovies.append(similarMovie)
       }
-    
           
     }
   }
