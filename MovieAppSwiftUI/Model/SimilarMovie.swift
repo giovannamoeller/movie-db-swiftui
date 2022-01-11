@@ -11,5 +11,5 @@ struct SimilarMovie {
   var name: String
   var image: String
   var releaseDate: Date
-  //var genres: [Genre]
+  var genres: [String]
 }

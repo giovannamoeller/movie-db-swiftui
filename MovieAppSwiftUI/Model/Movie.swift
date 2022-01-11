@@ -14,5 +14,5 @@ struct Movie {
   var image: String
   var numberOfLikes: Int
   var popularity: Int
-  //var similarMovies: [SimilarMovie]
+  var similarMovies: [SimilarMovie]
 }
