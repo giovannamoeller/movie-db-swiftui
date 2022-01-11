@@ -23,7 +23,7 @@ struct HomeSimilarMovieDetailsView: View {
   
   var body: some View {
     HStack {
-      Image("spider-man")
+      Image(systemName: "").data(url: URL(string: "\(API.imageURL)\(similarMovie.image)")!)
         .resizable()
         .scaledToFill()
         .frame(maxWidth: 88, idealHeight: 120)

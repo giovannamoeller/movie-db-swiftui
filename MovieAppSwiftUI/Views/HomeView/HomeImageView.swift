@@ -12,12 +12,13 @@ struct HomeImageView: View {
   @EnvironmentObject var movieModel: MovieModel
   
   var body: some View {
-    Image("spider-man")
+    Image(systemName: "").data(url: URL(string: "\(API.imageURL)\(movieModel.movie.image)")!)
       .resizable()
       .scaledToFill()
+      .clipped()
       .mask {
         LinearGradient(colors: [.white, .white.opacity(0)], startPoint: .top, endPoint: .bottom)
-      }.frame(minHeight: 456)
+      }.frame(maxHeight: 380)
   }
 }
 
