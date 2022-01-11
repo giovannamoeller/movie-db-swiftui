@@ -19,7 +19,6 @@ class MovieModel: ObservableObject {
   
   func getMovieDetails() -> Movie {
     let movie = Movie(name: "a", image: "a", numberOfLikes: 2, popularity: 3, similarMovies: [.init(name: "a", image: "a", releaseDate: Date(), genres: ["comedy", "a"])])
-    API.makeRequest()
     return movie
     
   }
