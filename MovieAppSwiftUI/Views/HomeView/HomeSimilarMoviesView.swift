@@ -33,29 +33,41 @@ struct HomeSimilarMovieDetailsView: View {
         Text(similarMovie.name)
           .font(.title3)
           .bold()
-        HStack {
-          Text(movieModel.convertStringInDataFormatAndReturnYear(similarMovie))
+        HStack(spacing: 0) {
+          Text("\(movieModel.convertStringInDataFormatAndReturnYear(similarMovie))  -")
             .padding(.trailing, 8)
           
-          HStack(spacing: 0) {
-            ForEach(0..<similarMovie.genreString.count, id: \.self) { i in
-                            
-              Text("\(similarMovie.genreString[i])")
-              
-              if i != similarMovie.genreString.count - 1 {
-                Text(", ")
+                HStack(spacing: 0) {
+                                    
+                  if similarMovie.genreString.count < 2 {
+                    Text("\(similarMovie.genreString[0])")
+                  } else {
+                    Text("\(similarMovie.genreString[0]), ")
+                    Text(similarMovie.genreString[1])
+                  }
+                
               }
-              
-            }
-          }.frame(maxWidth: 250)
+            
+          
+          
+          
+          
+            
+          
+          
+          
         }.foregroundColor(.white.opacity(0.7))
       }.padding(.leading)
     }
   }
+  
 }
+
+
 
 struct HomeSimilarMoviesView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeSimilarMoviesView().environmentObject(MovieModel())
+    let movieModel = MovieModel()
+    HomeSimilarMoviesView().environmentObject(movieModel)
   }
 }
