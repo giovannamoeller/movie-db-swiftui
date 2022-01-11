@@ -17,6 +17,9 @@ struct HomeView: View {
           Image("spider-man")
             .resizable()
             .scaledToFill()
+            .mask {
+              LinearGradient(colors: [.white, .white.opacity(0)], startPoint: .top, endPoint: .bottom)
+            }.frame(minHeight: 456)
           
           DescriptionView()
           
@@ -26,8 +29,6 @@ struct HomeView: View {
           
         }.foregroundColor(.white)
       }.edgesIgnoringSafeArea(.top)
-      
-      
       
     }
   }
