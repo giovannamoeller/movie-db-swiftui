@@ -9,10 +9,18 @@ import Foundation
 
 // spider man ID movie from movieDB: 634649
 
-struct Movie {
+struct Movie: Codable {
   var name: String
   var image: String
   var numberOfLikes: Int
-  var popularity: Int
-  var similarMovies: [SimilarMovie]
+  var popularity: Double
+  var similarMovies: [SimilarMovie] = []
+  
+  enum CodingKeys: String, CodingKey {
+    case name = "original_title"
+    case image = "poster_path"
+    case numberOfLikes = "vote_count"
+    case popularity
+  }
+  
 }

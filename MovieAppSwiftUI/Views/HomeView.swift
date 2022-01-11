@@ -11,6 +11,10 @@ struct HomeView: View {
   
   @ObservedObject var movieModel = MovieModel()
   
+  init() {
+    movieModel.getMovieDetails()
+  }
+  
   var body: some View {
     
     ZStack {
@@ -29,12 +33,10 @@ struct HomeView: View {
           
           SimilarMoviesView()
             .padding()
-            
           
         }.foregroundColor(.white)
       }.edgesIgnoringSafeArea(.top)
         .environmentObject(movieModel)
-      
     }
   }
 }
