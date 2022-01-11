@@ -103,14 +103,16 @@ struct SimilarMovieView: View {
           .font(.title3)
           .bold()
         HStack {
-          Text(movieModel.returnYearFromReleaseDate(similarMovie: similarMovie))
+          Text(movieModel.convertStringInDataFormatAndReturnYear(similarMovie))
             .padding(.trailing, 8)
           HStack(spacing: 0) {
-            ForEach(0..<similarMovie.genres.count, id: \.self) { i in
+            ForEach(0..<similarMovie.genreString.count, id: \.self) { i in
               
-              Text(similarMovie.genres[i])
+              Text("\(similarMovie.genreString.count)")
               
-              if i != similarMovie.genres.count - 1 {
+              Text("\(similarMovie.genreString[i])")
+              
+              if i != similarMovie.genreString.count - 1 {
                 Text(", ")
               }
               
