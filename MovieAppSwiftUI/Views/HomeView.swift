@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
+  
+  @ObservedObject var movieModel = MovieModel()
+  
+  
   var body: some View {
+    
     ZStack {
       Color.black.ignoresSafeArea()
       ScrollView(showsIndicators: false) {
-        VStack(alignment: .leading) {
+        LazyVStack(alignment: .leading) {
           
           Image("spider-man")
             .resizable()
@@ -29,28 +34,33 @@ struct HomeView: View {
           
         }.foregroundColor(.white)
       }.edgesIgnoringSafeArea(.top)
+        .environmentObject(movieModel)
       
     }
   }
 }
 
 struct DescriptionView: View {
+  
+  @EnvironmentObject var movieModel: MovieModel
+  
   var body: some View {
     HStack(alignment: .top) {
       VStack(alignment: .leading) {
-        Text("Spider Man - No Way Home")
+        Text(movieModel.movie.name)
           .font(.title)
           .bold()
           .padding(.bottom)
         HStack {
           HStack {
+            
             Image(systemName: "suit.heart.fill")
-            Text("1.2K likes")
+            Text("\(movieModel.movie.numberOfLikes) likes")
               .padding(.trailing, 32)
           }
           HStack {
             Image(systemName: "star.fill")
-            Text("5 Stars")
+            Text("\(movieModel.movie.popularity)")
           }
         }
       }
@@ -62,14 +72,19 @@ struct DescriptionView: View {
 }
 
 struct SimilarMoviesView: View {
+  @EnvironmentObject var movieModel: MovieModel
   var body: some View {
-    ForEach(1...5, id: \.self) {_ in
-      SimilarMovieView()
+    ForEach(movieModel.movie.similarMovies, id: \.self) { similarMovie in
+      SimilarMovieView(similarMovie: similarMovie)
     }
   }
 }
 
 struct SimilarMovieView: View {
+  
+  @EnvironmentObject var movieModel: MovieModel
+  var similarMovie: SimilarMovie
+  
   var body: some View {
     HStack {
       Image("spider-man")
@@ -79,13 +94,23 @@ struct SimilarMovieView: View {
         .clipped()
       
       VStack(alignment: .leading, spacing: 4) {
-        Text("Spider Man")
+        Text(similarMovie.name)
           .font(.title3)
           .bold()
         HStack {
-          Text("2021")
+          Text(movieModel.returnYearFromReleaseDate(similarMovie: similarMovie))
             .padding(.trailing, 8)
-          Text("Action")
+          HStack(spacing: 0) {
+            ForEach(0..<similarMovie.genres.count, id: \.self) { i in
+              
+              Text(similarMovie.genres[i])
+              
+              if i != similarMovie.genres.count - 1 {
+                Text(", ")
+              }
+              
+            }
+          }
         }.foregroundColor(.white.opacity(0.7))
       }.padding(.leading)
     }

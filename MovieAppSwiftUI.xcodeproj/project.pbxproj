@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		483B3384278D029F00990E02 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B3383278D029F00990E02 /* MovieModel.swift */; };
 		48748045278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48748044278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift */; };
 		48748047278CF3D3004DBCA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48748046278CF3D3004DBCA6 /* HomeView.swift */; };
 		48748049278CF3D5004DBCA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48748048278CF3D5004DBCA6 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4216BA270888D635593D4C57 /* Pods_MovieAppSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieAppSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		483B3383278D029F00990E02 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		48748041278CF3D3004DBCA6 /* MovieAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48748044278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		48748046278CF3D3004DBCA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		483B3382278D028F00990E02 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				483B3383278D029F00990E02 /* MovieModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		48748038278CF3D3004DBCA6 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 		48748043278CF3D3004DBCA6 /* MovieAppSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				483B3382278D028F00990E02 /* ViewModel */,
 				48A4371A278D00E200E16E7A /* Services */,
 				48A43713278CFDEF00E16E7A /* Model */,
 				48748052278CF3E5004DBCA6 /* Views */,
@@ -121,7 +132,6 @@
 				CF93A7B634B78BFD84E615F6 /* Pods-MovieAppSwiftUI.debug.xcconfig */,
 				9BCC581C342F75723C235AD0 /* Pods-MovieAppSwiftUI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -239,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483B3384278D029F00990E02 /* MovieModel.swift in Sources */,
 				48748047278CF3D3004DBCA6 /* HomeView.swift in Sources */,
 				48748045278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift in Sources */,
 				48A43717278D003F00E16E7A /* SimilarMovie.swift in Sources */,

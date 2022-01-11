@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SimilarMovie {
+struct SimilarMovie: Hashable {
   var name: String
   var image: String
   var releaseDate: Date
