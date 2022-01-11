@@ -43,6 +43,7 @@ struct HomeView: View {
 struct DescriptionView: View {
   
   @EnvironmentObject var movieModel: MovieModel
+  @State private var heartFilled: Bool = false
   
   var body: some View {
     HStack(alignment: .top) {
@@ -53,7 +54,6 @@ struct DescriptionView: View {
           .padding(.bottom)
         HStack {
           HStack {
-            
             Image(systemName: "suit.heart.fill")
             Text("\(movieModel.movie.numberOfLikes) likes")
               .padding(.trailing, 32)
@@ -65,8 +65,12 @@ struct DescriptionView: View {
         }
       }
       Spacer()
-      Image(systemName: "suit.heart.fill")
-        .offset(y: 24)
+      Button {
+        self.heartFilled.toggle()
+      } label: {
+        Image(systemName: heartFilled ? "suit.heart.fill" : "suit.heart")
+      }
+      .offset(y: 24)
     }.padding()
   }
 }
