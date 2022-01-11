@@ -15,7 +15,7 @@ struct API {
     let keys = NSDictionary(contentsOfFile: path)
     let APIKey = keys!["API_KEY"]!
     
-    AF.request("url").response { response in
+    AF.request("https://api.themoviedb.org/3/movie/634649/similar?api_key=\(APIKey)&language=en-US&page=1rl").response { response in
       print(response)
     }
   }

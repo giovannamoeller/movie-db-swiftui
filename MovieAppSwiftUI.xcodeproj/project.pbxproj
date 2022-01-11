@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		483B3384278D029F00990E02 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483B3383278D029F00990E02 /* MovieModel.swift */; };
+		485E240F278D1762000445FD /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 485E240E278D1762000445FD /* keys.plist */; };
 		48748045278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48748044278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift */; };
 		48748047278CF3D3004DBCA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48748046278CF3D3004DBCA6 /* HomeView.swift */; };
 		48748049278CF3D5004DBCA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48748048278CF3D5004DBCA6 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		4216BA270888D635593D4C57 /* Pods_MovieAppSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieAppSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		483B3383278D029F00990E02 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		485E240E278D1762000445FD /* keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		48748041278CF3D3004DBCA6 /* MovieAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48748044278CF3D3004DBCA6 /* MovieAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		48748046278CF3D3004DBCA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		48748038278CF3D3004DBCA6 = {
 			isa = PBXGroup;
 			children = (
+				485E240E278D1762000445FD /* keys.plist */,
 				48748043278CF3D3004DBCA6 /* MovieAppSwiftUI */,
 				48748042278CF3D3004DBCA6 /* Products */,
 				EBA9358FD036B6EF3DC6C0EA /* Pods */,
@@ -197,6 +200,7 @@
 			files = (
 				4874804C278CF3D5004DBCA6 /* Preview Assets.xcassets in Resources */,
 				48748049278CF3D5004DBCA6 /* Assets.xcassets in Resources */,
+				485E240F278D1762000445FD /* keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

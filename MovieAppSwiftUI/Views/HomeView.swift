@@ -11,7 +11,6 @@ struct HomeView: View {
   
   @ObservedObject var movieModel = MovieModel()
   
-  
   var body: some View {
     
     ZStack {
